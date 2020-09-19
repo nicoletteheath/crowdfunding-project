@@ -1,7 +1,9 @@
 .project-card {
     width: 100%;
-    border: 1px solid black;
-    box-shadow: 0px 0px 5px gray;
+    border: 1px solid #B8DDD6;
+    background-color:  #B8DDD6;
+    box-shadow: 0px 0px 5px #B8DDD6;
+    color: #AD9787;
   }
   .project-card img {
     width: 100%;
