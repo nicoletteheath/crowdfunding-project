@@ -1,11 +1,11 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Nav from "./components/Nav/Nav";
-import Home from "./pages/HomePage";
+import HomePage from "./pages/HomePage";
 import ProjectPage from "./pages/ProjectPage";
 
 
-export default function App() {
+function App() {
     return (    
         <Router>
             <div>
@@ -15,10 +15,12 @@ export default function App() {
                             <ProjectPage />
                         </Route>
                         <Route path="/">
-                            <Home />
+                            <HomePage />
                         </Route>
                     </Switch>
             </div>
         </Router>
     );
 }                  
+
+export default App;
