@@ -4,6 +4,7 @@ import "./App.css";
 import Nav from "./components/Nav/Nav";
 import HomePage from "./pages/HomePage";
 import ProjectPage from "./pages/ProjectPage";
+import LoginPage from "./pages/LoginPage";
 
 
 function App() {
@@ -14,6 +15,9 @@ function App() {
                     <Switch>
                         <Route path="/project/:id">
                             <ProjectPage />
+                        </Route>
+                        <Route path="/login">
+                            <LoginPage />
                         </Route>
                         <Route path="/">
                             <HomePage />
