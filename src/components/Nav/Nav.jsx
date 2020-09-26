@@ -8,6 +8,7 @@ function Nav() {
         <nav className="nav">
             <Link to="/">Home</Link>
             <Link to="/login"> Login</Link>
+            <Link to="/users"> Create Account </Link>
         </nav>
     );
 }
