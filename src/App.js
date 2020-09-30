@@ -6,6 +6,7 @@ import HomePage from "./pages/HomePage";
 import ProjectPage from "./pages/ProjectPage";
 import LoginPage from "./pages/LoginPage";
 import CreateAccountPage from "./pages/CreateAccountPage";
+import CreateProjectPage from "./pages/CreateProjectPage";
 
 
 function App() {
@@ -23,7 +24,10 @@ function App() {
                         <Route path="/users">
                             <CreateAccountPage />
                         </Route>
-                        <Route path="/">
+                        <Route path="/createprojects">
+                            <CreateProjectPage />
+                        </Route>
+                        <Route exact path="/">
                             <HomePage />
                         </Route>
                     </Switch>
