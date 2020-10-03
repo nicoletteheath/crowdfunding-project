@@ -7,6 +7,7 @@ import ProjectPage from "./pages/ProjectPage";
 import LoginPage from "./pages/LoginPage";
 import CreateAccountPage from "./pages/CreateAccountPage";
 import CreateProjectPage from "./pages/CreateProjectPage";
+import EditProjectPage from  "./pages/EditProjectPage";
 
 
 function App() {
@@ -26,6 +27,9 @@ function App() {
                         </Route>
                         <Route path="/createprojects">
                             <CreateProjectPage />
+                        </Route>
+                        <Route path="/editprojects">
+                            <EditProjectPage />
                         </Route>
                         <Route exact path="/">
                             <HomePage />

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useHistory } from "react-router-dom";
 
 function ProjectPage() {
     const [projectData, setProjectData] = useState({ pledges: [] });
@@ -15,17 +15,20 @@ function ProjectPage() {
         });
     }, []);
 
-    // const deleteData = async () => {
-    //     const response = await fetch(`${process.env.REACT_APP_API_URL}projects/${id}`, {
-    //         method: "delete",
-    //         headers: {
-    //             "Content-Type": "application/json",
-    //             Authorization: `token ${token}`,
-    //         },
-    //     }
-    //     );           
-    //     return response.json();
-    // };
+    const token = window.localStorage.getItem("token");
+    const history = useHistory();
+
+    const deleteData = async () => {
+        const response = await fetch(`${process.env.REACT_APP_API_URL}projects/${id}`, {
+            method: "delete",
+            headers: {
+                "Content-Type": "application/json",
+                Authorization: `token ${token}`,
+            },
+        }
+        ); 
+        history.push("/");       
+    };
 
     return (
     <div>
@@ -33,21 +36,28 @@ function ProjectPage() {
         <h2>Description: {projectData.description}</h2>
         <h3>Created at: {projectData.date_created}</h3>
         <h3>{`Status: ${projectData.is_open}`}</h3>
-        <h3>Pledges:</h3>
-        <ul>
-            {projectData.pledges.map((pledgeData, key) => {
-                return (
-                    <li key={key}>
-                        ${pledgeData.amount} from {pledgeData.supporter}
-                    </li>
-                );
-            })}
-                {/* <button type="submit" 
-                    onClick={deleteData}
-                >
+
+        {projectData.pledges?.length > 0 &&
+            (
+                <>
+            <h3>Pledges:</h3>
+            <ul>
+                {projectData.pledges.map((pledgeData, key) => {
+                    return (
+                        <li key={key}>
+                            ${pledgeData.amount} from {pledgeData.supporter}
+                        </li>
+                    );
+                })}            
+            </ul>
+            </>
+        )}
+
+        
+        <button type="submit" 
+                    onClick={deleteData}>
                     Delete Project
-                </button> */}
-        </ul>
+                </button>
     </div>
     );
 }
