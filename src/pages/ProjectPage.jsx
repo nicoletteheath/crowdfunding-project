@@ -15,9 +15,22 @@ function ProjectPage() {
         });
     }, []);
 
+    // const deleteData = async () => {
+    //     const response = await fetch(`${process.env.REACT_APP_API_URL}projects/${id}`, {
+    //         method: "delete",
+    //         headers: {
+    //             "Content-Type": "application/json",
+    //             Authorization: `token ${token}`,
+    //         },
+    //     }
+    //     );           
+    //     return response.json();
+    // };
+
     return (
     <div>
         <h2>{projectData.title}</h2>
+        <h2>Description: {projectData.description}</h2>
         <h3>Created at: {projectData.date_created}</h3>
         <h3>{`Status: ${projectData.is_open}`}</h3>
         <h3>Pledges:</h3>
@@ -29,6 +42,11 @@ function ProjectPage() {
                     </li>
                 );
             })}
+                {/* <button type="submit" 
+                    onClick={deleteData}
+                >
+                    Delete Project
+                </button> */}
         </ul>
     </div>
     );
