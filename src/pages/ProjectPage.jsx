@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { useParams, useHistory } from "react-router-dom";
+import { useParams, useHistory, Link } from "react-router-dom";
+
 
 function ProjectPage() {
     const [projectData, setProjectData] = useState({ pledges: [] });
@@ -57,8 +58,12 @@ function ProjectPage() {
         <button type="submit" 
                     onClick={deleteData}>
                     Delete Project
-                </button>
+        </button>
+
+        <Link to={`/project/${projectData.id}`}>Edit Project</Link>
+
     </div>
+
     );
 }
 

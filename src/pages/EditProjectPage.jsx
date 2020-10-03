@@ -1,8 +1,8 @@
 import React from "react";
-import EditProject from "../components/EditProjectForm/EditProjectForm";
+import EditProjectForm from "../components/EditProjectForm/EditProjectForm";
 
 function EditProjectPage() {
-    return <EditProject/>;
+    return <EditProjectForm/>;
 }
 
 export default EditProjectPage;

@@ -1,7 +1,23 @@
-import React, { useState } from "react";
-import { useHistory } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { useParams, useHistory } from "react-router-dom";
 
-    function EditProject() {
+function EditProjectForm() {
+    const [projectData, setProjectData] = useState({ pledges: [] });
+    const { id } = useParams();
+
+    useEffect(() => {
+        fetch(`${process.env.REACT_APP_API_URL}projects/${id}`)
+        .then((results) => {
+        return results.json();
+        })
+        .then((data) => {
+        setProjectData(data);
+        });
+    }, []);
+
+
+
+
 
         const [credentials, setCredentials] = useState({
             title: "",
@@ -13,6 +29,7 @@ import { useHistory } from "react-router-dom";
         });
         const history = useHistory();
         const token = window.localStorage.getItem("token");
+    
 
         const handleChange = (e) => {
             const { id, value } = e.target;
@@ -85,4 +102,4 @@ import { useHistory } from "react-router-dom";
         );
     }
 
-    export default EditProject;
+    export default EditProjectForm;
