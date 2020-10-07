@@ -37,7 +37,7 @@ function ProjectPage() {
         <h2>Description: {projectData.description}</h2>
         <h3>Created at: {projectData.date_created}</h3>
         <h3>{`Status: ${projectData.is_open}`}</h3>
-        <h3>Created at: {projectData.project_id}</h3>
+        {/* <h3>Created at: {projectData.project_id}</h3> */}
 
         {projectData.pledges?.length > 0 &&
             (
@@ -62,6 +62,7 @@ function ProjectPage() {
         </button>
 
         <Link to={`/editprojects/${projectData.id}`}>Edit Project</Link>
+        <Link to={`/createpledge/${projectData.id}`}>CreatePledge</Link>
     </div>
 
     );

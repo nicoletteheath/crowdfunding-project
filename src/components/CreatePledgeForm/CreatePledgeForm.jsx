@@ -1,17 +1,18 @@
 import React, { useState } from "react";
-import { useHistory } from "react-router-dom";
+import { useHistory, useParams } from "react-router-dom";
 
     function CreatePledge() {
-
+        const {id} = useParams()
         const [credentials, setCredentials] = useState({
             amount: 50,
             comment: "What a great project!",
             anonymous: false,
-            supporter: "nicoletteheath",
-            project_id: 5
+            supporter: "",
+            project_id: id
         });
         const history = useHistory();
         const token = window.localStorage.getItem("token");
+      
 
         const handleChange = (e) => {
             const { id, value } = e.target;
@@ -72,10 +73,10 @@ import { useHistory } from "react-router-dom";
                     <label htmlFor="supporter">Supporter:</label>
                     <input type="supporter" id="supporter" placeholder="Supporter" onChange={handleChange} value={credentials.supporter}/>
                 </div>
-                <div>
+                {/* <div>
                     <label htmlFor="project_id">Project ID:</label>
                     <input type="project_id" id="project_id" placeholder="project_id" onChange={handleChange} value={credentials.project_id}/>
-                </div>
+                </div> */}
                 <button type="submit" onClick={handleSubmit}>
                     Create Pledge
                 </button>
