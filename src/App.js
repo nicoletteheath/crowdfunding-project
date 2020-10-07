@@ -8,6 +8,7 @@ import LoginPage from "./pages/LoginPage";
 import CreateAccountPage from "./pages/CreateAccountPage";
 import CreateProjectPage from "./pages/CreateProjectPage";
 import EditProjectPage from  "./pages/EditProjectPage";
+import CreatePledgePage from "./pages/CreatePledgePage";
 
 
 function App() {
@@ -30,6 +31,9 @@ function App() {
                         </Route>
                         <Route path="/editprojects/:id">
                             <EditProjectPage />
+                        </Route>
+                        <Route path="/createpledge">
+                            <CreatePledgePage />
                         </Route>
                         <Route exact path="/">
                             <HomePage />
