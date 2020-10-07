@@ -61,7 +61,7 @@ function EditProjectForm() {
                 ) {
                 putData().then((response) => {
                     // window.localStorage.setItem("token", response.token);
-                    history.push("/");
+                    history.push(`/project/${id}`);
                 })
                 .catch((error) => {
                     alert("you haven't filled in all criteria");
