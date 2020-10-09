@@ -5,3 +5,51 @@
     row-gap: 10px;
     color: #AD9787;
   }
+
+.project-title {
+    font-size: 50px;
+}
+
+.other-headings {
+    font-size: 20px;
+}
+
+.front-page-image {
+    max-height: 100%;
+    min-width: 100%;
+    display: "flex";
+    justify-content: center;
+    padding: 20px;
+    object-fit: scale-down;
+}
+
+.submit-button {
+
+    padding: 20px;
+    color:#AD9787;
+    background-color: #E0EBE5;
+    text-decoration: none;
+    font-size: 21px;
+    border: 2px solid #B8DDD6;
+    border-radius: 15px;
+    margin: 10px;
+}
+
+.submit-button:link, .sunmit-button:visited {
+    color: #E0EBE5;
+}
+
+.submit-button:hover, .submit-button:active {
+    color: #E6B794
+}
+a:link, a:visited {
+    color: #7C7877;
+    padding: 14px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+  }
+  
+  a:hover, a:active {
+    color: #E6B794
+  }

@@ -6,7 +6,7 @@
     color: #AD9787;
   }
   .project-card img {
-    width: 100%;
-    height: 300px;
+    width: 85%;
+    height: 250px;
     object-fit: cover;
   }

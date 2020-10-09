@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useHistory } from "react-router-dom";
+import "./EditProjectForm.css";
 
 function EditProjectForm() {
     const [projectData, setProjectData] = useState({ pledges: [] });
@@ -21,8 +22,8 @@ function EditProjectForm() {
 
         const [credentials, setCredentials] = useState({
             title: "",
-            description: "test descriptio",
-            goal: 150,
+            description: "",
+            goal: 0,
             image: "http://lorempixel.com/400/400/nightlife",
             is_open: true,
             date_created: "2020-09-04T11:33:37Z",
@@ -60,7 +61,6 @@ function EditProjectForm() {
             if (true
                 ) {
                 putData().then((response) => {
-                    // window.localStorage.setItem("token", response.token);
                     history.push(`/project/${id}`);
                 })
                 .catch((error) => {
@@ -71,31 +71,31 @@ function EditProjectForm() {
 
         return (
             <form>
-                <div>
+                <div class="form-item">
                     <label htmlFor="title">Title:</label>
                     <input type="text" id="title" placeholder="Enter Title" onChange={handleChange}/>
                 </div>
-                <div>
+                <div class="form-item"> 
                     <label htmlFor="description">Description:</label>
                     <input type="description" id="description" placeholder="description" onChange={handleChange} value={credentials.description}/>
                 </div>
-                <div>
+                <div class="form-item">
                     <label htmlFor="goal">Goal:</label>
                     <input type="goal" id="goal" placeholder="Goal" onChange={handleChange} value={credentials.goal}/>
                 </div>
-                <div>
+                <div class="form-item">
                     <label htmlFor="image">Image:</label>
                     <input type="image" id="image" placeholder="Image" onChange={handleChange} value={credentials.image}/>
                 </div>
-                <div>
+                <div class="form-item">
                     <label htmlFor="is_open">Project Open:</label>
-                    <input type="is_open" id="is_open" placeholder="is_open" onChange={handleChange} value={credentials.is_open}/>
+                    <input type="is_open" id="is_open" placeholder="true or false" onChange={handleChange} value={credentials.is_open}/>
                 </div>
-                <div>
+                <div class="form-item">
                     <label htmlFor="date_created">Date Created:</label>
-                    <input type="date_created" id="date_created" placeholder="date_Created" onChange={handleChange} value={credentials.date_created}/>
+                    <input type="date_created" id="date_created" placeholder="date created" onChange={handleChange} value={credentials.date_created}/>
                 </div>
-                <button type="submit" onClick={handleSubmit}>
+                <button class="submit-button" type="submit" onClick={handleSubmit}>
                     Edit Project
                 </button>
             </form>

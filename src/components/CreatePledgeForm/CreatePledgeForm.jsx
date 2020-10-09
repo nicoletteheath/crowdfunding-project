@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useHistory, useParams } from "react-router-dom";
+import "./CreatePledgeForm.css";
 
     function CreatePledge() {
         const {id} = useParams()
@@ -57,27 +58,23 @@ import { useHistory, useParams } from "react-router-dom";
      
         return (
             <form>
-                <div>
+                <div class="form-item">
                     <label htmlFor="amount">Amount:</label>
                     <input type="text" id="amount" placeholder="Enter Amount" onChange={handleChange} value={credentials.amount}/>
                 </div>
-                <div>
+                <div class="form-item">
                     <label htmlFor="comment">Comment:</label>
                     <input type="text" id="comment" placeholder="comment" onChange={handleChange} value={credentials.comment}/>
                 </div>
-                <div>
+                <div class="form-item">
                     <label htmlFor="anonymous">Remain Anonymous?:</label>
                     <input type="anonymous" id="anonymous" placeholder="anonymous" onChange={handleChange} value={credentials.anonymous}/>
                 </div>
-                <div>
+                <div class="form-item">
                     <label htmlFor="supporter">Supporter:</label>
-                    <input type="supporter" id="supporter" placeholder="Supporter" onChange={handleChange} value={credentials.supporter}/>
+                    <input type="supporter" id="supporter" placeholder="enter username" onChange={handleChange} value={credentials.supporter}/>
                 </div>
-                {/* <div>
-                    <label htmlFor="project_id">Project ID:</label>
-                    <input type="project_id" id="project_id" placeholder="project_id" onChange={handleChange} value={credentials.project_id}/>
-                </div> */}
-                <button type="submit" onClick={handleSubmit}>
+                <button class="submit-button" type="submit" onClick={handleSubmit}>
                     Create Pledge
                 </button>
             </form>

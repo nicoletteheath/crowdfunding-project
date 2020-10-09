@@ -4,7 +4,7 @@ import "./Nav.css";
 
 
 
-function Nav() {
+function Nav(props) {
     const [isloggedIn, setisloggedin] = useState(false);
     const location = useLocation();
     
@@ -16,20 +16,23 @@ function Nav() {
     const handleLogout = () => {
       window.localStorage.clear();
     };
-  
+    
+    const { image } = props;
+
     return (
-        <nav>
-          <Link to="/">Home</Link>
-          {isloggedIn ? (
-            <Link to="/login" onClick={handleLogout}>
-              Logout
-            </Link>
-          ) : (
-            <Link to="/login">Login</Link>
-          )}
-          <Link to="/users">Create Account</Link>
-          <Link to="/createprojects">Create Project</Link>
-        </nav>
+
+            <nav>
+                <Link to="/">Home</Link>
+                {isloggedIn ? (
+                    <Link to="/login" onClick={handleLogout}>
+                    Logout
+                    </Link>
+                ) : (
+                    <Link to="/login">Login</Link>
+                )}
+                <Link to="/users">Create Account</Link>
+                <Link to="/createprojects">Create Project</Link>
+            </nav>
       );
     }
     export default Nav;

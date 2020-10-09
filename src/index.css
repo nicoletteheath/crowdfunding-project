@@ -1,6 +1,7 @@
 body {
   margin: 0;
   font-family: Chalkduster, fantasy;
+  text-decoration: none;
   background-color: #E0EBE5;
   color: #AD9787;
 }

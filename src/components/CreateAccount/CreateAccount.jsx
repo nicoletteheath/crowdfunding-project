@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
+import "./CreateAccount.css";
 
     function CreateAccount() {
 
@@ -46,19 +47,19 @@ import { useHistory } from "react-router-dom";
 
         return (
             <form>
-                <div>
+                <div class="form-item">
                     <label htmlFor="username">Username:</label>
                     <input type="text" id="username" placeholder="Enter username" onChange={handleChange}/>
                 </div>
-                <div>
+                <div class="form-item">
                     <label htmlFor="email">Email:</label>
                     <input type="email" id="email" placeholder="Email" onChange={handleChange}/>
                 </div>
-                <div>
+                <div class="form-item">
                     <label htmlFor="password">Password:</label>
                     <input type="password" id="password" placeholder="Password" onChange={handleChange}/>
                 </div>
-                <button type="submit" onClick={handleSubmit}>
+                <button class="submit-button" type="submit" onClick={handleSubmit}>
                     Create Account
                 </button>
             </form>

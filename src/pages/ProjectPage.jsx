@@ -33,10 +33,10 @@ function ProjectPage() {
 
     return (
     <div>
-        <h2>{projectData.title}</h2>
-        <h2>Description: {projectData.description}</h2>
-        <h3>Created at: {projectData.date_created}</h3>
-        <h3>{`Status: ${projectData.is_open}`}</h3>
+        <h2 class="project-title" >{projectData.title}</h2>
+        <h2 class="other-headings" >Description: {projectData.description}</h2>
+        <h3 class="other-headings"> Created at: {projectData.date_created}</h3>
+        <h3 class="other-headings">{`Status: ${projectData.is_open}`}</h3>
         {/* <h3>Created at: {projectData.project_id}</h3> */}
 
         {projectData.pledges?.length > 0 &&
@@ -56,13 +56,25 @@ function ProjectPage() {
         )}
 
         
-        <button type="submit" 
-                    onClick={deleteData}>
-                    Delete Project
+        <button 
+            className = "submit-button"
+            type="submit" 
+            onClick={deleteData}>
+            Delete Project
         </button>
-
-        <Link to={`/editprojects/${projectData.id}`}>Edit Project</Link>
-        <Link to={`/createpledge/${projectData.id}`}>CreatePledge</Link>
+        
+        <Link to={`/editprojects/${projectData.id}`}>
+            <button class = "submit-button"
+            type="submit">
+            Edit Project
+            </button>
+        </Link>
+        <Link to={`/createpledge/${projectData.id}`}>
+            <button class = "submit-button"
+            type="submit">
+            Create Pledge
+            </button>
+        </Link>
     </div>
 
     );
